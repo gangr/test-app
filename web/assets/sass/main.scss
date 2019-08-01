@@ -1,0 +1,88 @@
+/*
+  Some scss code improvements:
+    1. Code was re-formatted to make it readable
+    2. Font families, consisting of more than one word surrounded with quotes. Generic font names added
+       (moved to variable)
+    3. Color values moved to variables
+    4. Borders moved to variable
+    5. Translate used instead of big negative and hardcoded margin to center the form
+    6. Style nesting used to take advantage of sass
+    7. CSS properties re-arranged in more logical order
+ */
+
+$framesColor: #777;
+$buttonBkgColor: #7EB87E;
+$buttonBorderColor: #4D814D;
+$buttonTextColor: #333;
+$errorColor: #EB8282;
+
+$mainFont: "Lucida Sans Unicode", sans-serif;
+
+$standardBorder: 1px solid $framesColor;
+
+h1 {
+  border-bottom: 1px solid silver;
+  font-family: $mainFont;
+  font-weight: normal;
+}
+
+.page-wrapper {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  width: 500px;
+  padding: 5px;
+  transform: translateX(-50%);
+  border: 1px solid silver;
+}
+
+.heading {
+  font-size: 24px;
+  text-align: center;
+}
+
+.errors {
+  display:none;
+  padding:3px;
+  border: $standardBorder;
+  color: $errorColor;
+}
+
+.row {
+  margin: 15px 0;
+
+  label {
+    width: 150px;
+    float: left;
+    font-family: $mainFont;
+
+    .asterisk {
+      color: #F35151;
+    }
+  }
+
+  input[type=text], textarea {
+    width: 200px;
+    padding: 3px;
+    border: $standardBorder;
+  }
+}
+
+.submit-container {
+  text-align: center;
+
+  #submit {
+    display: inline-block;
+    padding: 4px 8px;
+    border: 1px solid $buttonBorderColor;
+    background: $buttonBkgColor;
+    font-family: $mainFont;
+    color: $buttonTextColor;
+    text-decoration: none;
+
+    &.large {
+      font-size: 24px;
+    }
+  }
+}
+

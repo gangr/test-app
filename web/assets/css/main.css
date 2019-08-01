@@ -1,0 +1,73 @@
+/*
+  Some scss code improvements:
+    1. Code was re-formatted to make it readable
+    2. Font families, consisting of more than one word surrounded with quotes. Generic font names added
+       (moved to variable)
+    3. Color values moved to variables
+    4. Borders moved to variable
+    5. Translate used instead of big negative and hardcoded margin to center the form
+    6. Style nesting used to take advantage of sass
+    7. CSS properties re-arranged in more logical order
+ */
+h1 {
+  border-bottom: 1px solid silver;
+  font-family: "Lucida Sans Unicode", sans-serif;
+  font-weight: normal;
+}
+
+.page-wrapper {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  width: 500px;
+  padding: 5px;
+  transform: translateX(-50%);
+  border: 1px solid silver;
+}
+
+.heading {
+  font-size: 24px;
+  text-align: center;
+}
+
+.errors {
+  display: none;
+  padding: 3px;
+  border: 1px solid #777;
+  color: #EB8282;
+}
+
+.row {
+  margin: 15px 0;
+}
+.row label {
+  width: 150px;
+  float: left;
+  font-family: "Lucida Sans Unicode", sans-serif;
+}
+.row label .asterisk {
+  color: #F35151;
+}
+.row input[type=text], .row textarea {
+  width: 200px;
+  padding: 3px;
+  border: 1px solid #777;
+}
+
+.submit-container {
+  text-align: center;
+}
+.submit-container #submit {
+  display: inline-block;
+  padding: 4px 8px;
+  border: 1px solid #4D814D;
+  background: #7EB87E;
+  font-family: "Lucida Sans Unicode", sans-serif;
+  color: #333;
+  text-decoration: none;
+}
+.submit-container #submit.large {
+  font-size: 24px;
+}
+
+/*# sourceMappingURL=main.css.map */
