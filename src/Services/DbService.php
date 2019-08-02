@@ -31,9 +31,11 @@ class DbService
 
         // If database is not exist create one
         if (!mysqli_select_db($this->db, $config['dbname'])){
-            $sql = "CREATE DATABASE " . $config['dbname'];
+            $sql = "CREATE DATABASE " . $config['dbname'] . " CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;";
             $this->db->query($sql);
         }
+
+        $this->db->set_charset("utf8");
 
         return $this->db;
     }

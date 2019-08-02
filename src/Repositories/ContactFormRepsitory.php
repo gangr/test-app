@@ -33,7 +33,7 @@ class ContactFormRepsitory extends Repository implements RepositoryInterface
                 phone VARCHAR(20),
                 address VARCHAR(255),
                 message VARCHAR(255)
-            );';
+            ) CHARACTER SET=utf8;';
         $this->db->runSql($sql);
     }
 
@@ -63,6 +63,11 @@ class ContactFormRepsitory extends Repository implements RepositoryInterface
      */
     public function addRecord(Array $record)
     {
+        // sanitize record values
+        foreach ($record as $key => $value) {
+            $record[$key] = trim(htmlspecialchars(strip_tags($value)));
+        }
+
         // create new model and set values
         $this->model->setName(isset($record['name']) ? $record['name'] : '');
         $this->model->setPhone(isset($record['phone']) ? $record['phone'] : '');
